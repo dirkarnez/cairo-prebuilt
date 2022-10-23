@@ -32,7 +32,7 @@ jobs:
         uses: msys2/setup-msys2@v2
         with:
           msystem: MINGW64
-          install: make autoconf automake libtool autogen perl
+          install: make autoconf automake libtool autogen perl gtk-doc
 
       - name: set PATH, check mingw version, cmake generate, build and install
         shell: msys2 {0}
