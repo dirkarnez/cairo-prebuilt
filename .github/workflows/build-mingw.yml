@@ -48,12 +48,8 @@ jobs:
             cd .. &&
             cd cairo && 
             export PATH="$workspace/mingw64:$workspace/mingw64/bin:$workspace/PortableGit-2.38.1-64-bit:$workspace/PortableGit-2.38.1-64-bit/bin:$workspace/msys64/usr/bin:/usr/bin" &&
-            export CPPFLAGS="$CPPFLAGS -I$libpng_location/include" &&
-            export LDFLAGS="$LDFLAGS -L$libpng_location/lib" &&
-            export LIBS="$LIBS -lpng16" &&
-            echo $CPPFLAGS &&
-            echo $LDFLAGS &&
-            echo $LIBS &&
+            export PKG_CONFIG_PATH="$PKG_CONFIG_PATH $libpng_location/lib/pkgconfig" &&
+            echo $PKG_CONFIG_PATH &&
             g++ --version && 
             ./autogen.sh &&
             ./configure --help &&
