@@ -26,7 +26,7 @@ jobs:
       
       - name: curl l-smash-v2.14.5-x86_64-posix-seh-rev0-8.1.0.zip
         shell: cmd
-        run:  cd /d ${{ github.workspace }} && curl https://github.com/dirkarnez/libpng-prebuilt/releases/download/v1.6.34/libpng-v1.6.34-x86_64-posix-seh-rev0-8.1.0.zip -L --output libpng-v1.6.34-x86_64-posix-seh-rev0-8.1.0.zip && dir && 7z.exe x libpng-v1.6.34-x86_64-posix-seh-rev0-8.1.0.zip -o"libpng-v1.6.34-x86_64-posix-seh-rev0-8.1.0"
+        run:  cd /d ${{ github.workspace }} && curl https://github.com/dirkarnez/libpng-prebuilt/releases/download/v1.6.34/libpng-v1.6.34-x86_64-posix-seh-rev0-8.1.0.zip -L --output libpng-v1.6.34-x86_64-posix-seh-rev0-8.1.0.zip && dir && 7z.exe x libpng-v1.6.34-x86_64-posix-seh-rev0-8.1.0.zip -o"libpng"
         
       - name: git clone pkg-config
         shell: cmd
@@ -42,7 +42,7 @@ jobs:
         shell: msys2 {0}
         run: |
             workspace=$(pwd) &&
-            cd libpng-v1.6.34-x86_64-posix-seh-rev0-8.1.0 &&
+            cd libpng &&
             libpng_location=$(pwd)
             ls &&
             cd .. &&
